@@ -36,9 +36,6 @@ public class EnderecoController {
 
 	@GetMapping(value = "/municipios")
 	public String telaListaMunicipios(Model model) {
-	 Integer estadoId =	(Integer) model.getAttribute("estadoid");
-		 List<MunicipioDTO> municipios =  this.enderecoService.obterMunicipioPorEstados(estadoId);
-		model.addAttribute("listamunicipios", enderecoService.obterLista());
 		return "municipio/lista";
 	}
 	
@@ -67,9 +64,10 @@ public class EnderecoController {
 	}
 	
 	@GetMapping(value = "/estado/{id}/municipios")
-	public String obterMunicipiosPorEstado(Model model, @PathVariable Integer estadoId) {
-		model.addAttribute("estadoid", estadoId);
-		return "redirect:/municipios";
+	public String obterMunicipiosPorEstado(Model model, @PathVariable Integer id) {
+		 List<MunicipioDTO> municipios =  this.enderecoService.obterMunicipioPorEstados(id);
+		model.addAttribute("listamunicipios", municipios);
+		return "municipio/lista";
 	}
 
 }

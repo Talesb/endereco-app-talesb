@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>AppMIT</title>
+<title>AppMIT Endereco</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
@@ -12,52 +12,32 @@
 	<c:import url="/WEB-INF/jsp/menu.jsp"/>
 
 	<div class="container mt-3">
-	  <h2>Cadastramento de Endereco</h2>
-	  
-	  <c:if test="${not empty mensagem}">
-		<div class="alert alert-success">
-		  <strong>Confirmação!</strong> ${mensagem}
-		</div>	  
-	  </c:if>
-
-	  <form action="/endereco" method="get">
-	    <button type="submit" class="btn btn-primary">Novo</button>
-	  </form>
-	  
+	  <h2>Listagem de Munícipios</h2>
 	  <hr>
 		
-	<c:if test="${not empty lista}">		
-		<h2>Total de Enderecos: ${lista.size()}</h2>
+	<c:if test="${not empty listamunicipios}">		
+		<h2>Total de Municípios: ${listamunicipios.size()}</h2>
 		  
 		<table class="table table-striped">
 		    <thead>
 		      <tr>
-		        <th>CEP</th>
-		        <th>Bairro</th>
-		        <th>Logradouro</th>
-		        <th>Complemento</th>
-		        <th>Cidade</th>
-		        <th>Uf</th>
+		        <th>ID</th>
+		        <th>Nome</th>
 		      </tr>
 		    </thead>
 		    <tbody>
-		      <c:forEach var="e" items="${lista}">
+		      <c:forEach var="m" items="${listamunicipios}">
 			      <tr>
-			        <td>${e.cep}</td>
-			        <td>${e.bairro}</td>
-			        <td>${e.logradouro}</td>
-			        <td>${e.complemento}</td>
-			        <td>${e.localidade}</td>
-			        <td>${e.uf}</td>
-			        <td><a href="/endereco/${e.id}/excluir">excluir</a></td>
+			        <td>${m.id}</td>
+			        <td>${m.nome}</td>
 			      </tr>
 		      </c:forEach>		      
 		    </tbody>
 	  	</table>
     </c:if>	  	  
 
-	<c:if test="${empty lista}">		
-	  <h2>Não existem Enderecos cadastrados!!!</h2>
+	<c:if test="${empty listamunicipios}">		
+	  <h2>Não existem Municípios!!!</h2>
 	</c:if>
 
 	</div>
