@@ -1,0 +1,9 @@
+Mais um item de menu:
+
+- Criar item de menu "Estados" que irá listar estados (sem botão "novo").
+- Adicionar link "Municipios" na tela de listagem de estados (pra cada estado).
+- Ao clicar em "Municipios"  irá redirecionar para uma tela de listagem de municipios (mostrar apenas o nome) do estado selecionado.
+
+Consultar: https://servicodados.ibge.gov.br/api/docs/
+
+https://trello.com/b/PRdy7Z6c/3-security
