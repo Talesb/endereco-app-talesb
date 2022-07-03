@@ -1,19 +1,35 @@
 package br.edu.infnet.enderecoapp.model.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
+@Entity
+@Table(name = "TEndereco", uniqueConstraints = @UniqueConstraint(columnNames = { "cep" }))
 public class Endereco {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
+	@Column(nullable = false)
 	private String cep;
 
 	private String logradouro;
 
 	private String complemento;
 
+	@Column(nullable = false)
 	private String bairro;
 
+	@Column(nullable = false)
 	private String localidade;
 
+	@Column(nullable = false)
 	private String uf;
 
 	public Endereco() {

@@ -1,0 +1,1 @@
+Adicionar etapas de Autenticação e Autorização  nos projetos "*-App"

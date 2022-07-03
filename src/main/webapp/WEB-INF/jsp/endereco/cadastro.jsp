@@ -14,7 +14,7 @@
 	<c:import url="/WEB-INF/jsp/menu.jsp" />
 
 	<div class="container mt-3">
-		<h2>Cadastramento de Eleitor</h2>
+		<h2>Cadastramento de Endereco</h2>
 
 		<c:if test="${empty endereco.cep}">
 			<form action="/endereco" method="post">
