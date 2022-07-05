@@ -9,12 +9,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import br.edu.infnet.enderecoapp.model.domain.Role;
 import br.edu.infnet.enderecoapp.model.domain.Usuario;
 import br.edu.infnet.enderecoapp.model.service.RoleService;
 import br.edu.infnet.enderecoapp.model.service.UsuarioService;
 
+@SessionAttributes("user")
 @Controller
 public class UsuarioController {
 

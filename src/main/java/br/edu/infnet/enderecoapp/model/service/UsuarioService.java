@@ -12,8 +12,8 @@ public class UsuarioService {
 
 	@Autowired
 	private UsuarioRepository usuarioRepository;
-	
-	@Autowired 
+
+	@Autowired
 	BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	public void incluir(Usuario usuario) {
@@ -32,6 +32,10 @@ public class UsuarioService {
 			return usuario;
 		}
 		return null;
+	}
+
+	public Object findByEmail(String string) {
+		return this.usuarioRepository.findByEmail(string);
 	}
 
 }
